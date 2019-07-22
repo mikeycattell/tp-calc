@@ -1,0 +1,698 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  TP Calculator - Prototype
+{% endblock %}
+
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a>-->
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                        <li>
+                            <a href="#earningsAndSavings.claimantEmploymentStatus-error">Employment status is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.carer-error">Carer option is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.dateOfBirth.dayOfMonth-error">Day is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.dateOfBirth.month-error">Month is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.dateOfBirth.year-error">Year is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.jobCentrePostcode-error">Job centre postcode is missing</a>
+                        </li>
+                        <li>
+                            <a href="#household.claimant.sex-error">Claimant sex is missing</a>
+                        </li>
+                        <li>
+                            <a href="#primaryBenefit.supportedHousing-error">Supported Housing is missing</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+
+    <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
+        <h1 class="govuk-heading-xl">TP Calculator</h1>
+        <form id="tp-calculator-form">
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Household Makeup
+                    </h1>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Claimant
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group govuk-form-group--error">
+                        <fieldset class="govuk-fieldset" aria-describedby="claimant-dob-hint claimant-dob-error" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="claimant-dob">
+                                    Date of birth
+                                </label>
+                            </legend>
+                            <span id="claimant-dob-hint" class="govuk-hint">For example, 25 11 1995</span>
+                                    <span id="household.claimant.dateOfBirth-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span>
+                                    </span>
+                                    <span id="household.claimant.dateOfBirth.dayOfMonth-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Day is missing
+                                    </span>
+                                    <span id="household.claimant.dateOfBirth.month-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Month is missing
+                                    </span>
+                                    <span id="household.claimant.dateOfBirth.year-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Year is missing
+                                    </span>
+                            <div class="govuk-date-input">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="claimant-dob-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claimant-dob-day" name="household.claimant.dateOfBirth.dayOfMonth" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="claimant-dob-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claimant-dob-month" name="household.claimant.dateOfBirth.month" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="claimant-dob-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claimant-dob-year" name="household.claimant.dateOfBirth.year" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group govuk-form-group--error">
+                            <span id="household.claimant.sex-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Claimant sex is missing
+                            </span>
+
+                        <fieldset class="govuk-fieldset" aria-describedby="sex-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="claimant-sex">
+                                    Sex
+                                </label>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline" id="claimant-sex">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.claimant.sex-m" name="household.claimant.sex" type="radio" value="MALE">
+                                    <label class="govuk-label govuk-radios__label" for="household.claimant.sex-m">
+                                        Male
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.claimant.sex-f" name="household.claimant.sex" type="radio" value="FEMALE">
+                                    <label class="govuk-label govuk-radios__label" for="household.claimant.sex-f">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                            <span id="household.claimant.carer-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Carer option is missing
+                            </span>
+
+                        <fieldset class="govuk-fieldset" aria-describedby="carer-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="carer-claimant">
+                                    Is Carer
+                                </label>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline" id="carer-claimant">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.claimant.carer-y" name="household.claimant.carer" type="radio" value="YES">
+                                    <label class="govuk-label govuk-radios__label" for="household.claimant.carer-y">
+                                        Yes
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.claimant.carer-n" name="household.claimant.carer" type="radio" value="NO">
+                                    <label class="govuk-label govuk-radios__label" for="household.claimant.carer-n">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <div class="govuk-form-group govuk-form-group--error">
+                            <span id="household.claimant.jobCentrePostcode-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Job centre postcode is missing
+                            </span>
+
+                        <fieldset class="govuk-fieldset" aria-describedby="postcode-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label govuk-label--s" for="postcode">
+                                    Postcode for job centre
+                                </label>
+                            </legend>
+                            <input class="govuk-input govuk-input--width-10" id="household.claimant.jobCentrePostcode" name="household.claimant.jobCentrePostcode" type="text" autocomplete="postal-code" value="">
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Partner
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group ">
+                        <fieldset class="govuk-fieldset" aria-describedby="partner-dob-hint" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="partner-dob">
+                                    Date of birth
+                                </label>
+                            </legend>
+                            <!--<span id="partner-dob-hint" class="govuk-hint">For example, 25 11 1995</span>-->
+                            <div class="govuk-date-input" id="partner-dob">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="partner-dob-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-dob-day" name="household.partner.dateOfBirth.dayOfMonth" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="partner-dob-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-dob-month" name="household.partner.dateOfBirth.month" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="partner-dob-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="partner-dob-year" name="household.partner.dateOfBirth.year" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group ">
+
+                        <fieldset class="govuk-fieldset" aria-describedby="sex-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="sex-partner">
+                                    Sex
+                                </label>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline" id="sex-partner">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.partner.sex-m" name="household.partner.sex" type="radio" value="MALE">
+                                    <label class="govuk-label govuk-radios__label" for="household.partner.sex-m">
+                                        Male
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.partner.sex-f" name="household.partner.sex" type="radio" value="FEMALE">
+                                    <label class="govuk-label govuk-radios__label" for="household.partner.sex-f">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+                        <fieldset class="govuk-fieldset" aria-describedby="carer-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <label class="govuk-label--s" for="carer-partner">
+                                    Is Carer
+                                </label>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline" id="carer-partner">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.partner.carer-y" name="household.partner.carer" type="radio" value="YES">
+                                    <label class="govuk-label govuk-radios__label" for="household.partner.carer-y">
+                                        Yes
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="household.partner.carer-n" name="household.partner.carer" type="radio" value="NO">
+                                    <label class="govuk-label govuk-radios__label" for="household.partner.carer-n">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+
+                <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                        <h2 class="govuk-heading-m">Children</h2>
+                        <div class="govuk-form-group" id="child-input-group">
+                        </div>
+                    </div>
+                    <button class="govuk-button" type="button" onclick="appendChildInput()">
+                        Add Child
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Earnings and Savings
+                    </h1>
+                </legend>
+
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Household
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-date-input__label">
+                            Total amount of savings
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.householdSavings" name="earningsAndSavings.householdSavings" value="">
+                    </div>
+
+
+                </div>
+
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Claimant
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-date-input__label">
+                            Net monthly earnings
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.claimantNetMonthlyEarnings" name="earningsAndSavings.claimantNetMonthlyEarnings" value="">
+                    </div>
+
+                    <br>
+                    <div class="govuk-form-group govuk-form-group--error">
+                            <span id="earningsAndSavings.claimantEmploymentStatus-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Employment status is missing
+                            </span>
+
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h1 class="govuk-fieldset__heading">
+                                    Employment status
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="claimant-employment-status-working" name="earningsAndSavings.claimantEmploymentStatus" type="radio" value="WORKING">
+                                    <label class="govuk-label govuk-radios__label" for="claimant-employment-status-working">
+                                        Working
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="claimant-employment-status-not-working" name="earningsAndSavings.claimantEmploymentStatus" type="radio" value="NOT_WORKING">
+                                    <label class="govuk-label govuk-radios__label" for="claimant-employment-status-not-working">
+                                        Not working
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="claimant-employment-status-exempt" name="earningsAndSavings.claimantEmploymentStatus" type="radio" value="EXEMPT">
+                                    <label class="govuk-label govuk-radios__label" for="claimant-employment-status-exempt">
+                                        Exempt
+                                    </label></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+
+                    <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
+                            Other Income
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.claimantOtherIncome" name="earningsAndSavings.claimantOtherIncome" value="">
+                    </div>
+                </div>
+
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Partner
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-date-input__label">
+                            Net monthly earnings
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.partnerNetMonthlyEarnings" name="earningsAndSavings.partnerNetMonthlyEarnings" value="">
+                    </div>
+
+
+                    <br>
+                    <div class="govuk-form-group ">
+
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h1 class="govuk-fieldset__heading">
+                                    Employment status
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="partner-employment-status-working" name="earningsAndSavings.partnerEmploymentStatus" type="radio" value="WORKING">
+                                    <label class="govuk-label govuk-radios__label" for="partner-employment-status-working">
+                                        Working
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="partner-employment-status-not-working" name="earningsAndSavings.partnerEmploymentStatus" type="radio" value="NOT_WORKING">
+                                    <label class="govuk-label govuk-radios__label" for="partner-employment-status-not-working">
+                                        Not working
+                                    </label></div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="partner-employment-status-exempt" name="earningsAndSavings.partnerEmploymentStatus" type="radio" value="EXEMPT">
+                                    <label class="govuk-label govuk-radios__label" for="partner-employment-status-exempt">
+                                        Exempt
+                                    </label></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+                    <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
+                            Other Income
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.partnerOtherIncome" name="earningsAndSavings.partnerOtherIncome" value="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Primary Benefits
+                    </h1>
+                </legend>
+
+                <fieldset class="govuk-fieldset" aria-describedby="primary-benefits-household-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-label--m" for="primary-benefits-household">
+                            Household
+                        </h1>
+                    </legend>
+
+                    <!--<span id="partner-dob-hint" class="govuk-hint">For example, 25 11 1995</span>-->
+                    <div class="govuk-date-input" id="primary-benefits-household">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+
+                                <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
+                                    Housing Benefit (weekly amount)
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-hb" name="primaryBenefit.housingBenefit" value="">
+                            </div>
+                            <div class="govuk-form-group">
+
+                                <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hcosts">
+                                    Housing Costs (Monthly UC Verified)
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-hcosts" name="primaryBenefit.housingCosts" value="">
+                            </div>
+
+                            <fieldset class="govuk-fieldset" aria-describedby="supported-housing-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <label class="govuk-label--s" for="supported-housing">
+                                        Is Supported Housing
+                                    </label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline" id="supported-housing">
+                                      <span id="primaryBenefit.supportedHousing-error" class="govuk-error-message">
+                                          <span class="govuk-visually-hidden">Error:</span> Supported Housing is missing
+                                      </span>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="primaryBenefit.supportedHousing-y" name="primaryBenefit.supportedHousing" type="radio" value="YES">
+                                        <label class="govuk-label govuk-radios__label" for="primaryBenefit.supportedHousing-y">
+                                            Yes
+                                        </label></div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="primaryBenefit.supportedHousing-n" name="primaryBenefit.supportedHousing" type="radio" value="NO">
+                                        <label class="govuk-label govuk-radios__label" for="primaryBenefit.supportedHousing-n">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-wtc">
+                                    Working Tax Credit (Daily rate for the household)
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-wtc" name="primaryBenefit.workingTaxCredit" value="">
+                            </div>
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-ctc">
+                                    Child Tax Credit (Daily rate for the household)
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-ctc" name="primaryBenefit.childTaxCredit" value="">
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="govuk-fieldset" aria-describedby="primary-claimant-benefits-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"></legend>
+
+                    <div class="govuk-form-group" id="primary-claimant-benefit-input-group">
+
+                        <h1 class="govuk-label govuk-label--m" for="primary-claimant-benefit-input-group">
+                            Claimant
+                        </h1>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-wtc">
+                                Capability for work
+                            </label>
+                            <select class="govuk-select" id="primary-claimant-capablity-for-work-selector" name="primaryBenefit.primaryCapabilityForWork">
+                                <option value="NONE">None</option>
+                                <option value="LCW">Limited Capability for Work (LCW)</option>
+                                <option value="LCWWRA">Limited Capability for Work and Work Capability Activity
+                                    (LCWWRA)
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="govuk-form-group">
+
+                            <!-- content injected here by appendLegacyBenefitInput() function -->
+                            <div class="govuk-form-group">
+                            </div>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="primary-esa-start-date">
+                                Employment Support Allowance Start Date
+                            </label>
+
+                            <div id="primary-esa-start-date" class="govuk-date-input">
+
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="primary-esa-start-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="primary-esa-start-day" name="primaryBenefit.primaryEsaStartDate.dayOfMonth" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="primary-esa-start-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="primary-esa-start-month" name="primaryBenefit.primaryEsaStartDate.month" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="primary-esa-start-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="primary-esa-start-year" name="primaryBenefit.primaryEsaStartDate.year" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-form-group" id="primary-claimant-awards-group">
+
+                        </div>
+                    </div>
+                    <div>
+                        <button id="add-claimant-award-button" type="button" class="govuk-button govuk-button--secondary" onclick="appendPrimaryLegacyBenefitInput()">
+                            Add Award
+                        </button>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="govuk-fieldset" aria-describedby="secondary-claimant-benefits-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"></legend>
+
+                    <div class="govuk-form-group" id="secondary-claimant-benefit-input-group">
+                        <h1 class="govuk-label govuk-label--m" for="secondary-claimant-benefit-input-group">
+                            Partner
+                        </h1>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-wtc">
+                                Capability for work
+                            </label>
+                            <select class="govuk-select" id="secondary-claimant-capablity-for-work-selector" name="primaryBenefit.secondaryCapabilityForWork">
+                                <option value="NONE">None</option>
+                                <option value="LCW">Limited Capability for Work (LCW)</option>
+                                <option value="LCWWRA">Limited Capability for Work and Work Capability Activity
+                                    (LCWWRA)
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="govuk-form-group">
+
+                            <!-- content injected here by appendLegacyBenefitInput() function -->
+                            <div class="govuk-form-group">
+                            </div>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="secondary-esa-start-date">
+                                Employment Support Allowance Start Date
+                            </label>
+
+                            <div id="secondary-esa-start-date" class="govuk-date-input">
+
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="secondary-esa-start-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="secondary-esa-start-day" name="primaryBenefit.secondaryEsaStartDate.dayOfMonth" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="secondary-esa-start-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="secondary-esa-start-month" name="primaryBenefit.secondaryEsaStartDate.month" value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="secondary-esa-start-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="secondary-esa-start-year" name="primaryBenefit.secondaryEsaStartDate.year" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="govuk-form-group" id="secondary-claimant-awards-group">
+
+                        </div>
+                    </div>
+                    <div>
+                        <button id="add-partner-award-button" type="button" class="govuk-button govuk-button--secondary" onclick="appendSecondaryLegacyBenefitInput()">
+                            Add Award
+                        </button>
+                    </div>
+
+                </fieldset>
+
+                <!-- Child Care -->
+                <fieldset class="govuk-fieldset" aria-describedby="childcare-hint">
+                    <div class="govuk-form-group" id="childcare-input-group">
+                        <h1 class="govuk-label govuk-label--m" for="childcare-input-group">
+                            Children
+                        </h1>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="cared-for-count-input">
+                                No of cared-for children
+                            </label>
+                            <input class="govuk-input govuk-input--width-3" id="cared-for-count-input" name="primaryBenefit.childCare.caredForCount" value="">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="childcare-cost-input">
+                                Childcare cost
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="childcare-cost-input" name="primaryBenefit.childCare.childCareCost" value="">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="lower-disability-count-input">
+                                No. of children receiving Tax Credit disability element (Lower rate)
+                            </label>
+                            <input class="govuk-input govuk-input--width-3" id="lower-disability-count-input" name="primaryBenefit.childCare.lowerDisabilityCount" value="">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="higher-disability-count-input">
+                                No. of children receiving Tax Credit disability element (Higher rate)
+                            </label>
+                            <input class="govuk-input govuk-input--width-3" id="higher-disability-count-input" name="primaryBenefit.childCare.higherDisabilityCount" value="">
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+
+
+        </form>
+        <form method="post" action="/tp-calculator">
+            <button type="submit" class="govuk-button" onclick="setJsonInputValue()">
+                Calculate
+            </button>
+
+            <input id="tp-calculator-input" name="tp-calculator-input" type="hidden" value="">
+        </form>
+    </main>
+</div>
+
+{% endblock %}
+{% endblock %}
