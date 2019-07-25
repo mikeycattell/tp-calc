@@ -314,7 +314,7 @@
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Partner earnings
+                            Partner's earnings
                         </h1>
                     </legend>
 
@@ -333,7 +333,7 @@
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <h1 class="govuk-fieldset__heading">
-                                    Employment status
+                                    Partner's employment status
                                 </h1>
                             </legend>
                             <div class="govuk-radios">
@@ -444,7 +444,7 @@
                     <div class="govuk-form-group" id="primary-claimant-benefit-input-group">
 
                         <h1 class="govuk-label govuk-label--m" for="primary-claimant-benefit-input-group">
-                            Claimant
+                            Claimant benefits and awards
                         </h1>
 
                         <div class="govuk-form-group">
@@ -507,7 +507,7 @@
                     </div>
                     <div>
                         <button id="add-claimant-award-button" type="button" class="govuk-button govuk-button--secondary" onclick="appendPrimaryLegacyBenefitInput()">
-                            Add Award
+                            Add a benefit or award
                         </button>
                     </div>
 
@@ -518,7 +518,7 @@
 
                     <div class="govuk-form-group" id="secondary-claimant-benefit-input-group">
                         <h1 class="govuk-label govuk-label--m" for="secondary-claimant-benefit-input-group">
-                            Partner
+                            Partner benefits and awards
                         </h1>
 
                         <div class="govuk-form-group">
@@ -543,9 +543,9 @@
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="secondary-esa-start-date">
-                                Employment Support Allowance Start Date
+                                Employment Support Allowance (ESA) start date
                             </label>
-
+<span id="claimant-dob-hint" class="govuk-hint">For example, 25 11 1995</span>
                             <div id="secondary-esa-start-date" class="govuk-date-input">
 
                                 <div class="govuk-date-input__item">
@@ -581,7 +581,7 @@
                     </div>
                     <div>
                         <button id="add-partner-award-button" type="button" class="govuk-button govuk-button--secondary" onclick="appendSecondaryLegacyBenefitInput()">
-                            Add Award
+                            Add benefit or award
                         </button>
                     </div>
 
@@ -591,33 +591,33 @@
                 <fieldset class="govuk-fieldset" aria-describedby="childcare-hint">
                     <div class="govuk-form-group" id="childcare-input-group">
                         <h1 class="govuk-label govuk-label--m" for="childcare-input-group">
-                            Children
+                            Child benefits and awards
                         </h1>
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="cared-for-count-input">
-                                No of cared-for children
+                                Number of children in childcare
                             </label>
                             <input class="govuk-input govuk-input--width-3" id="cared-for-count-input" name="primaryBenefit.childCare.caredForCount" value="">
                         </div>
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="childcare-cost-input">
-                                Childcare cost
+                                Childcare cost (weekly)
                             </label>
                             <input class="govuk-input govuk-input--width-10" id="childcare-cost-input" name="primaryBenefit.childCare.childCareCost" value="">
                         </div>
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="lower-disability-count-input">
-                                No. of children receiving Tax Credit disability element (Lower rate)
+                                Number of children receiving Tax Credit disability element (lower rate)
                             </label>
                             <input class="govuk-input govuk-input--width-3" id="lower-disability-count-input" name="primaryBenefit.childCare.lowerDisabilityCount" value="">
                         </div>
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="higher-disability-count-input">
-                                No. of children receiving Tax Credit disability element (Higher rate)
+                                Number of children receiving Tax Credit disability element (higher rate)
                             </label>
                             <input class="govuk-input govuk-input--width-3" id="higher-disability-count-input" name="primaryBenefit.childCare.higherDisabilityCount" value="">
                         </div>
@@ -630,7 +630,7 @@
         </form>
         <form method="post" action="/tp-calculator">
             <button type="submit" class="govuk-button" onclick="setJsonInputValue()">
-                Calculate
+                Calculate TP
             </button>
 
             <input id="tp-calculator-input" name="tp-calculator-input" type="hidden" value="">
