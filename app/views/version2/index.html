@@ -19,14 +19,14 @@
             <div class="govuk-form-group">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        Household Makeup
+                        Household makeup
                     </h1>
                 </legend>
                   <hr><br>
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Claimant
+                            Claimant details
                         </h1>
                     </legend>
 
@@ -72,9 +72,10 @@
                         <fieldset class="govuk-fieldset" aria-describedby="sex-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label--s" for="claimant-sex">
-                                    Sex
+                                    Gender
                                 </label>
                             </legend>
+
                             <div class="govuk-radios govuk-radios--inline" id="claimant-sex">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="household.claimant.sex-m" name="household.claimant.sex" type="radio" value="MALE">
@@ -94,7 +95,7 @@
                         <fieldset class="govuk-fieldset" aria-describedby="carer-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label--s" for="carer-claimant">
-                                    Is Carer
+                                    Is the claimant a carer?
                                 </label>
                             </legend>
                             <div class="govuk-radios govuk-radios--inline" id="carer-claimant">
@@ -119,7 +120,7 @@
                         <fieldset class="govuk-fieldset" aria-describedby="postcode-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label govuk-label--s" for="postcode">
-                                    Postcode for job centre
+                                    Claimant postcode
                                 </label>
                             </legend>
                             <input class="govuk-input govuk-input--width-10" id="household.claimant.jobCentrePostcode" name="household.claimant.jobCentrePostcode" type="text" autocomplete="postal-code" value="">
@@ -129,7 +130,7 @@
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Partner
+                            Partner details
                         </h1>
                     </legend>
 
@@ -140,7 +141,7 @@
                                     Date of birth
                                 </label>
                             </legend>
-                            <!--<span id="partner-dob-hint" class="govuk-hint">For example, 25 11 1995</span>-->
+                              <span id="claimant-dob-hint" class="govuk-hint">For example, 25 11 1995</span>
                             <div class="govuk-date-input" id="partner-dob">
                                 <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
@@ -175,7 +176,7 @@
                         <fieldset class="govuk-fieldset" aria-describedby="sex-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label--s" for="sex-partner">
-                                    Sex
+                                    Gender
                                 </label>
                             </legend>
                             <div class="govuk-radios govuk-radios--inline" id="sex-partner">
@@ -197,7 +198,7 @@
                         <fieldset class="govuk-fieldset" aria-describedby="carer-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label--s" for="carer-partner">
-                                    Is Carer
+                                    Is the partner a carer?
                                 </label>
                             </legend>
                             <div class="govuk-radios govuk-radios--inline" id="carer-partner">
@@ -220,12 +221,12 @@
 
                 <div class="govuk-form-group">
                     <div class="govuk-form-group">
-                        <h2 class="govuk-heading-m">Children</h2>
+                        <h2 class="govuk-heading-m">Children in the household</h2>
                         <div class="govuk-form-group" id="child-input-group">
                         </div>
                     </div>
                     <button id="add-claimant-award-button" type="button" class="govuk-button govuk-button--secondary" onclick="appendPrimaryLegacyBenefitInput()">
-                        Add Child
+                        Add a child
                     </button>
                 </div>
 
@@ -234,14 +235,14 @@
             <div class="govuk-form-group">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        Earnings and Savings
+                        Earnings and savings
                     </h1>
                 </legend>
                 <hr><br>
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Household
+                            Household savings
                         </h1>
                     </legend>
 
@@ -259,7 +260,7 @@
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Claimant
+                            Claimant earnings
                         </h1>
                     </legend>
 
@@ -304,7 +305,7 @@
                     <div class="govuk-form-group">
 
                         <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
-                            Other Income
+                            Other income
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.claimantOtherIncome" name="earningsAndSavings.claimantOtherIncome" value="">
                     </div>
@@ -313,7 +314,7 @@
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                            Partner
+                            Partner earnings
                         </h1>
                     </legend>
 
@@ -358,7 +359,7 @@
                     <div class="govuk-form-group">
 
                         <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
-                            Other Income
+                            Partner's other income
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="earningsAndSavings.partnerOtherIncome" name="earningsAndSavings.partnerOtherIncome" value="">
                     </div>
@@ -369,7 +370,7 @@
             <div class="govuk-form-group">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        Primary Benefits
+                        Primary benefits
                     </h1>
                 </legend>
                 <hr><br>
@@ -386,14 +387,14 @@
                             <div class="govuk-form-group">
 
                                 <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hb">
-                                    Housing Benefit (weekly amount)
+                                    Housing benefit (weekly amount)
                                 </label>
                                 <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-hb" name="primaryBenefit.housingBenefit" value="">
                             </div>
                             <div class="govuk-form-group">
 
                                 <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-hcosts">
-                                    Housing Costs (Monthly UC Verified)
+                                    Housing costs (monthly UC verified)
                                 </label>
                                 <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-hcosts" name="primaryBenefit.housingCosts" value="">
                             </div>
@@ -401,7 +402,7 @@
                             <fieldset class="govuk-fieldset" aria-describedby="supported-housing-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                     <label class="govuk-label--s" for="supported-housing">
-                                        Is Supported Housing
+                                        Are they in supported accommodation?
                                     </label>
                                 </legend>
                                 <div class="govuk-radios govuk-radios--inline" id="supported-housing">
@@ -421,14 +422,14 @@
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-wtc">
-                                    Working Tax Credit (Daily rate for the household)
+                                    Working Tax Credit (daily rate for the household)
                                 </label>
                                 <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-wtc" name="primaryBenefit.workingTaxCredit" value="">
                             </div>
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-date-input__label" for="primary-benefits-household-ctc">
-                                    Child Tax Credit (Daily rate for the household)
+                                    Child Tax Credit (daily rate for the household)
                                 </label>
                                 <input class="govuk-input govuk-input--width-10" id="primary-benefits-household-ctc" name="primaryBenefit.childTaxCredit" value="">
                             </div>
@@ -453,7 +454,7 @@
                             <select class="govuk-select" id="primary-claimant-capablity-for-work-selector" name="primaryBenefit.primaryCapabilityForWork">
                                 <option value="NONE">None</option>
                                 <option value="LCW">Limited Capability for Work (LCW)</option>
-                                <option value="LCWWRA">Limited Capability for Work and Work Capability Activity
+                                <option value="LCWWRA">Limited Capability for Work and Work-Related Activity
                                     (LCWWRA)
                                 </option>
                             </select>
@@ -468,8 +469,9 @@
 
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="primary-esa-start-date">
-                                Employment Support Allowance Start Date
+                                Employment Support Allowance (ESA) start date
                             </label>
+                            <span id="claimant-dob-hint" class="govuk-hint">For example, 25 11 1995</span>
 
                             <div id="primary-esa-start-date" class="govuk-date-input">
 
