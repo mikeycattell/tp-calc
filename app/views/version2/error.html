@@ -12,33 +12,32 @@
     <!-- <a href="#" class="govuk-back-link">Back</a>-->
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
             <h2 class="govuk-error-summary__title" id="error-summary-title">
-                There is a problem
-            </h2>
+                There is a problem </h2>
             <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                         <li>
-                            <a href="#earningsAndSavings.claimantEmploymentStatus-error">Employment status is missing</a>
+                            <a href="#earningsAndSavings.claimantEmploymentStatus-error">Choose employment status</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.carer-error">Carer option is missing</a>
+                            <a href="#household.claimant.carer-error">Carer option must be selected</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.dateOfBirth.dayOfMonth-error">Day is missing</a>
+                            <a href="#household.claimant.dateOfBirth.dayOfMonth-error">Day must be completed</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.dateOfBirth.month-error">Month is missing</a>
+                            <a href="#household.claimant.dateOfBirth.month-error">Month must be completed</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.dateOfBirth.year-error">Year is missing</a>
+                            <a href="#household.claimant.dateOfBirth.year-error">Year must be completed</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.jobCentrePostcode-error">Job centre postcode is missing</a>
+                            <a href="#household.claimant.jobCentrePostcode-error">Provide claimant postcode</a>
                         </li>
                         <li>
-                            <a href="#household.claimant.sex-error">Claimant sex is missing</a>
+                            <a href="#household.claimant.sex-error">Select gender</a>
                         </li>
                         <li>
-                            <a href="#primaryBenefit.supportedHousing-error">Supported Housing is missing</a>
+                            <a href="#primaryBenefit.supportedHousing-error">Select whether they are in supported housing  </a>
                         </li>
                 </ul>
             </div>
@@ -112,7 +111,7 @@
 
                     <div class="govuk-form-group govuk-form-group--error">
                             <span id="household.claimant.sex-error" class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Claimant sex is missing
+                                <span class="govuk-visually-hidden">Error:</span> Select gender
                             </span>
 
                         <fieldset class="govuk-fieldset" aria-describedby="sex-hint">
@@ -137,7 +136,7 @@
                         </fieldset>
 
                             <span id="household.claimant.carer-error" class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Carer option is missing
+                                <span class="govuk-visually-hidden">Error:</span>Carer option is missing
                             </span>
 
                         <fieldset class="govuk-fieldset" aria-describedby="carer-hint">
@@ -165,13 +164,13 @@
 
                     <div class="govuk-form-group govuk-form-group--error">
                             <span id="household.claimant.jobCentrePostcode-error" class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Job centre postcode is missing
+                                <span class="govuk-visually-hidden">Error:</span> Provide claimant postcode
                             </span>
 
                         <fieldset class="govuk-fieldset" aria-describedby="postcode-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <label class="govuk-label govuk-label--s" for="postcode">
-                                    Postcode for job centre
+                                    Claimant postcode
                                 </label>
                             </legend>
                             <input class="govuk-input govuk-input--width-10" id="household.claimant.jobCentrePostcode" name="household.claimant.jobCentrePostcode" type="text" autocomplete="postal-code" value="">
